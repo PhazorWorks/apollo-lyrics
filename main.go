@@ -11,10 +11,10 @@ import (
 )
 
 type Lyrics struct {
-	Lyrics   string
-	Explicit bool
-	Artist   string
-	Name     string
+	Lyrics   string `json:"lyrics"`
+	Explicit bool   `json:"explicit"`
+	Artist   string `json:"artist"`
+	Name     string `json:"name"`
 }
 
 type Response struct {
@@ -57,6 +57,7 @@ func main() {
 		if err := json.NewDecoder(resp.Body).Decode(&response); err != nil {
 			log.Println(err)
 		}
+
 		lyrics := Lyrics{
 			Name:     response.Name,
 			Lyrics:   response.Lyrics,
