@@ -28,6 +28,4 @@ EXPOSE 8080
 
 USER nonroot:nonroot
 
-HEALTHCHECK CMD curl --fail http://localhost:8080/ping || exit 1
-
 ENTRYPOINT ["/apollo-lyrics"]
